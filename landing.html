@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SolverFi - Real-World Yield, Real-World Impact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.12.1/dist/ethers.umd.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A192F; /* A darker navy blue for the base */
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #FFC43D, #FF6C2F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-button {
+            background-color: #FF6C2F;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #FFC43D;
+            transform: translateY(-2px);
+        }
+        .card {
+             background-color: #172A45; /* Slightly lighter navy for cards */
+             border: 1px solid #294C60;
+        }
+    </style>
+</head>
+
+<body class="text-gray-300">
+    <!-- Header -->
+    <header class="bg-opacity-80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white">SolverFi</h1>
+            <div>
+                <a href="#investors" class="mx-2 hover:text-orange-400 transition-colors">For Investors</a>
+                <a href="#businesses" class="mx-2 hover:text-orange-400 transition-colors">For Businesses</a>
+                <a href="#team" class="mx-2 hover:text-orange-400 transition-colors">Team</a>
+                <a href="#roadmap" class="mx-2 hover:text-orange-400 transition-colors">Roadmap</a>
+                <a href="./index.html" class="ml-4 cta-button text-white font-bold py-2 px-4 rounded-lg shadow-lg">Launch App</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-6 text-center">
+        <div class="container mx-auto">
+            <h2 class="text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                Fueling Real-World Business. <br/> Generating <span class="gradient-text">Sustainable Yield.</span>
+            </h2>
+            <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+                SolverFi connects stablecoin investors seeking reliable returns with real-world businesses that need capital for invoice financing. Earn yield backed by tangible economic activity, not market speculation.
+            </p>
+            <div class="mt-8 flex justify-center gap-4">
+                <a href="./index.html" class="cta-button text-white font-bold py-3 px-6 rounded-lg shadow-lg">Start Earning Yield</a>
+                <a href="./apply.html" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-colors">Apply for Funding</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Investors Section -->
+    <section id="investors" class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-white">For Yield Investors</h3>
+                <p class="mt-2 text-gray-400">Put your USDC to work and earn yield from a diversified portfolio of real-world business loans.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card p-6 rounded-lg text-center">
+                    <div class="text-5xl mb-4">💰</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Deposit & Earn</h4>
+                    <p class="text-gray-400">Simply deposit your USDC into our secure Investor Vault. In return, you receive shares representing your stake in the capital pool.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="card p-6 rounded-lg text-center">
+                    <div class="text-5xl mb-4">📈</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Real-World Backing</h4>
+                    <p class="text-gray-400">Your capital is loaned to vetted, real-world businesses for specific, invoice-backed jobs. Your yield comes from their success.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="card p-6 rounded-lg text-center">
+                     <div class="text-5xl mb-4">✨</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Transparent & On-Chain</h4>
+                    <p class="text-gray-400">All capital movements, loans, and fee distributions are tracked transparently on the blockchain. Watch your investment grow in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Businesses Section -->
+    <section id="businesses" class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-white">For Businesses</h3>
+                <p class="mt-2 text-gray-400">Stop waiting on invoices. Get the capital you need to pay for labor and materials upfront, and grow your business faster.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card p-6 rounded-lg text-center">
+                    <div class="text-5xl mb-4">📝</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Simple Application</h4>
+                    <p class="text-gray-400">Fill out our straightforward eligibility form. Tell us about your business and the specific invoice you need to finance.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="card p-6 rounded-lg text-center">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">DAO-Approved</h4>
+                    <p class="text-gray-400">Our DAO performs due diligence to verify your business and the invoice. We partner with legitimate, credit-worthy businesses.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="card p-6 rounded-lg text-center">
+                    <div class="text-5xl mb-4">🚀</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Get Funded & Grow</h4>
+                    <p class="text-gray-400">Once approved, you'll receive the USDC you need. Complete your job, get paid by your client, and repay the loan plus a competitive interest rate.</p>
+                </div>
+            </div>
+             <div class="text-center mt-12">
+                 <a href="./apply.html" class="cta-button text-white font-bold py-3 px-8 rounded-lg shadow-lg text-lg">Apply for Invoice Financing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Flowchart -->
+    <section class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-white">The Capital Lifecycle</h3>
+                <p class="mt-2 text-gray-400">A transparent, circular flow that benefits everyone.</p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0">
+                <!-- Step 1 -->
+                <div class="text-center p-4">
+                    <div class="w-24 h-24 rounded-full bg-orange-500 flex items-center justify-center text-4xl mx-auto">👨‍💼</div>
+                    <h5 class="font-bold mt-2 text-white">Investors</h5>
+                    <p class="text-xs text-gray-400">Deposit USDC</p>
+                </div>
+                <div class="text-2xl font-bold text-gray-500 mx-4">→</div>
+                <!-- Step 2 -->
+                <div class="text-center p-4">
+                    <div class="w-24 h-24 rounded-full bg-blue-500 flex items-center justify-center text-4xl mx-auto">🏦</div>
+                    <h5 class="font-bold mt-2 text-white">Kernel</h5>
+                    <p class="text-xs text-gray-400">Loans Capital</p>
+                </div>
+                <div class="text-2xl font-bold text-gray-500 mx-4">→</div>
+                <!-- Step 3 -->
+                <div class="text-center p-4">
+                    <div class="w-24 h-24 rounded-full bg-green-500 flex items-center justify-center text-4xl mx-auto">🏢</div>
+                    <h5 class="font-bold mt-2 text-white">Businesses</h5>
+                    <p class="text-xs text-gray-400">Repay Loan + Yield</p>
+                </div>
+                <div class="text-2xl font-bold text-gray-500 mx-4">→</div>
+                <!-- Step 4 -->
+                <div class="text-center p-4">
+                     <div class="w-24 h-24 rounded-full bg-purple-500 flex items-center justify-center text-4xl mx-auto">💸</div>
+                    <h5 class="font-bold mt-2 text-white">Yield Distributed</h5>
+                    <p class="text-xs text-gray-400">Back to Investors & DAO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- On-Chain Architecture Section -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-white">Our On-Chain Architecture</h3>
+                <p class="mt-2 text-gray-400 max-w-3xl mx-auto">Our system is a scalable and efficient machine built on a foundation of purpose-built smart contracts, ensuring security and transparency at every step.</p>
+            </div>
+            <div class="space-y-8">
+                <!-- Row 1: Users -->
+                <div class="flex justify-center gap-8">
+                    <div class="card p-4 rounded-lg w-1/3 text-center">
+                        <h4 class="font-bold text-white">Investors</h4>
+                        <p class="text-sm text-gray-400">Provide USDC capital</p>
+                    </div>
+                    <div class="card p-4 rounded-lg w-1/3 text-center">
+                        <h4 class="font-bold text-white">Businesses (Solvers)</h4>
+                        <p class="text-sm text-gray-400">Receive and repay loans</p>
+                    </div>
+                </div>
+                <!-- Connecting Arrows -->
+                <div class="flex justify-around">
+                    <div class="text-2xl text-gray-500">↓</div>
+                    <div class="text-2xl text-gray-500">↓</div>
+                </div>
+                <!-- Row 2: Main Contracts -->
+                <div class="flex justify-center gap-8">
+                    <div class="card p-4 rounded-lg w-1/3 text-center border-blue-400 border-2">
+                        <h4 class="font-bold text-white">Investor Vault</h4>
+                        <p class="text-sm text-gray-400">Accepts deposits and issues yield-bearing shares to investors.</p>
+                    </div>
+                     <div class="card p-4 rounded-lg w-1/3 text-center border-orange-400 border-2">
+                        <h4 class="font-bold text-white">Kernel Contract</h4>
+                        <p class="text-sm text-gray-400">The core logic engine. Disburses loans, tracks debt, and processes repayments.</p>
+                    </div>
+                </div>
+                 <!-- Connecting Arrows -->
+                <div class="flex justify-around">
+                    <div class="text-2xl text-gray-500">↓</div>
+                    <div class="text-2xl text-gray-500">↓</div>
+                </div>
+                 <!-- Row 3: Treasury & DAO -->
+                <div class="flex justify-center gap-8">
+                    <div class="card p-4 rounded-lg w-1/3 text-center border-purple-400 border-2">
+                        <h4 class="font-bold text-white">Yield Vault</h4>
+                        <p class="text-sm text-gray-400">Collects the DAO's performance fees from profitable loans.</p>
+                    </div>
+                    <div class="card p-4 rounded-lg w-1/3 text-center">
+                        <h4 class="font-bold text-white">DAO Treasury</h4>
+                        <p class="text-sm text-gray-400">The ultimate destination for protocol revenue, governed by the DAO.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Statistics Section -->
+    <section id="stats" class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-white">Live Protocol Statistics</h3>
+                <p class="mt-2 text-gray-400">Transparency is our foundation. All data is live from the blockchain.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="card p-6 rounded-lg">
+                    <p id="apyStat" class="text-4xl font-extrabold gradient-text">12.3%</p>
+                    <p class="mt-1 text-gray-400">Current Investor APY</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <p id="tvlStat" class="text-4xl font-extrabold text-white">...</p>
+                    <p class="mt-1 text-gray-400">Total Value Locked (TVL)</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <p id="loansStat" class="text-4xl font-extrabold text-white">...</p>
+                    <p class="mt-1 text-gray-400">Total Loans Disbursed</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <p id="businessesStat" class="text-4xl font-extrabold text-white">42</p>
+                    <p class="mt-1 text-gray-400">Businesses Funded</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Team Section -->
+    <section id="team" class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-white">Meet the Team</h3>
+                <p class="mt-2 text-gray-400">The architects and builders of the SolverFi protocol.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="card p-6 rounded-lg text-center w-64">
+                    <div class="w-32 h-32 rounded-full bg-gray-500 mx-auto mb-4"></div>
+                    <h4 class="text-xl font-semibold text-white">Alex Johnson</h4>
+                    <p class="text-orange-400">Lead Developer</p>
+                </div>
+                <div class="card p-6 rounded-lg text-center w-64">
+                    <div class="w-32 h-32 rounded-full bg-gray-500 mx-auto mb-4"></div>
+                    <h4 class="text-xl font-semibold text-white">Maria Garcia</h4>
+                    <p class="text-orange-400">Business Development</p>
+                </div>
+                <div class="card p-6 rounded-lg text-center w-64">
+                    <div class="w-32 h-32 rounded-full bg-gray-500 mx-auto mb-4"></div>
+                    <h4 class="text-xl font-semibold text-white">Sam Chen</h4>
+                    <p class="text-orange-400">Smart Contract Engineer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto max-w-3xl">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-white">Our Roadmap</h3>
+                <p class="mt-2 text-gray-400">Our vision for a more efficient and transparent future for real-world asset financing.</p>
+            </div>
+            <div class="relative">
+                <!-- Vertical line -->
+                <div class="absolute left-1/2 -ml-px h-full w-0.5 bg-gray-700"></div>
+                <!-- Roadmap Item 1 -->
+                <div class="relative mb-8">
+                    <div class="flex items-center">
+                        <div class="flex-1 text-right pr-8">
+                            <h4 class="font-bold text-lg text-white">Q2 2025: Protocol Launch</h4>
+                            <p class="text-gray-400">Initial deployment of Investor Vault, Kernel, and Yield Vault contracts. Onboarding of first cohort of businesses.</p>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-green-500 border-4 border-gray-900 z-10"></div>
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+                </div>
+                <!-- Roadmap Item 2 -->
+                <div class="relative mb-8">
+                     <div class="flex items-center">
+                        <div class="flex-1 pl-8 text-left"></div>
+                        <div class="w-8 h-8 rounded-full bg-orange-500 border-4 border-gray-900 z-10"></div>
+                        <div class="flex-1 pl-8">
+                            <h4 class="font-bold text-lg text-white">Q3 2025: Governance & Staking</h4>
+                            <p class="text-gray-400">Introduction of the SolverFi token, enabling community governance and staking rewards for token holders.</p>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Roadmap Item 3 -->
+                <div class="relative">
+                    <div class="flex items-center">
+                        <div class="flex-1 text-right pr-8">
+                            <h4 class="font-bold text-lg text-white">Q4 2025: Cross-Chain Expansion</h4>
+                            <p class="text-gray-400">Deploying the protocol on additional EVM-compatible chains to increase access to capital and diversify investment opportunities.</p>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-gray-500 border-4 border-gray-900 z-10"></div>
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-white">Frequently Asked Questions</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Investor FAQ -->
+                <div>
+                    <h4 class="text-2xl font-semibold text-orange-400 mb-4">For Investors</h4>
+                    <div class="space-y-6">
+                        <div>
+                            <h5 class="font-semibold text-white">How is my capital protected?</h5>
+                            <p class="text-gray-400 mt-1">Your funds are loaned to real-world businesses against specific, verifiable invoices. Our DAO performs off-chain due diligence on every business and every loan to mitigate risk.</p>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-white">What are the fees?</h5>
+                            <p class="text-gray-400 mt-1">The protocol charges a 20% performance fee on the yield generated by solvers. 80% of the yield is distributed back to you, the investor.</p>
+                        </div>
+                         <div>
+                            <h5 class="font-semibold text-white">How do I withdraw my funds?</h5>
+                            <p class="text-gray-400 mt-1">You can withdraw your initial deposit and any accrued yield at any time through the "Withdraw All" button in our secure dashboard app.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Business FAQ -->
+                <div>
+                     <h4 class="text-2xl font-semibold text-orange-400 mb-4">For Businesses</h4>
+                    <div class="space-y-6">
+                        <div>
+                            <h5 class="font-semibold text-white">What are the requirements to get a loan?</h5>
+                            <p class="text-gray-400 mt-1">We fund registered businesses with a proven track record. You'll need to submit an application with your company details and the specific invoice you need to finance for our DAO to review.</p>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-white">What is the interest rate on loans?</h5>
+                            <p class="text-gray-400 mt-1">Interest rates are competitive and are determined on a case-by-case basis during the due diligence process, depending on the risk profile and duration of the loan.</p>
+                        </div>
+                         <div>
+                            <h5 class="font-semibold text-white">How long does the approval process take?</h5>
+                            <p class="text-gray-400 mt-1">Our DAO aims to complete the due diligence and approval process within 5-7 business days after you submit your application.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <p>&copy; 2025 SolverFi. All Rights Reserved.</p>
+             <div class="mt-4">
+                <a href="#" class="mx-2 hover:text-orange-400">Twitter</a>
+                <a href="#" class="mx-2 hover:text-orange-400">Discord</a>
+                <a href="#" class="mx-2 hover:text-orange-400">Docs</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ARBITRUM_RPC_URL = 'https://arb1.arbitrum.io/rpc';
+
+            const addresses = {
+                 investorVault: '0x1a51f1966d35661573908DC913307076d937aa90',
+                 kernel: '0x752e06b4903168ef5b5FA62773347617e2877C3F', 
+            };
+
+            const abis = {
+                investorVault: JSON.parse(`[{"inputs":[],"name":"getVaultTotals","outputs":[{"internalType":"uint256","name":"totalUSDC","type":"uint256"},{"internalType":"uint256","name":"totalSharesMinted","type":"uint256"},{"internalType":"uint256","name":"totalYield","type":"uint256"}],"stateMutability":"view","type":"function"}]`),
+                kernel: JSON.parse(`[{"inputs":[],"name":"totalCapitalDeployed","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]`)
+            };
+
+            const provider = new window.ethers.JsonRpcProvider(ARBITRUM_RPC_URL);
+
+            const investorVaultContract = new window.ethers.Contract(addresses.investorVault, abis.investorVault, provider);
+            const kernelContract = new window.ethers.Contract(addresses.kernel, abis.kernel, provider);
+
+            async function fetchLiveStats() {
+                try {
+                    const [vaultTotals, totalDisbursed] = await Promise.all([
+                        investorVaultContract.getVaultTotals(),
+                        kernelContract.totalCapitalDeployed()
+                    ]);
+
+                    const tvl = parseFloat(window.ethers.formatUnits(vaultTotals.totalUSDC, 6));
+                    const loans = parseFloat(window.ethers.formatUnits(totalDisbursed, 6));
+
+                    document.getElementById('tvlStat').textContent = `$${tvl.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                    document.getElementById('loansStat').textContent = `$${loans.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                
+                } catch(e) {
+                    console.error("Failed to fetch live stats:", e);
+                    document.getElementById('tvlStat').textContent = 'Error';
+                    document.getElementById('loansStat').textContent = 'Error';
+                }
+            }
+
+            fetchLiveStats();
+        });
+    </script>
+</body>
+</html>
