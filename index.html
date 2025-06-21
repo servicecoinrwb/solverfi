@@ -221,12 +221,10 @@
 
 <script>
     // --- Global Scope Variables ---
-    if (typeof provider === 'undefined') {
-        var provider, signer, usdcContract, investorVaultContract, yieldVaultContract, kernelContract;
-        var currentAddress;
-        var shareAmount = 0n;
-        var isSolver = false;
-    }
+    var provider, signer, usdcContract, investorVaultContract, yieldVaultContract, kernelContract;
+    var currentAddress;
+    var shareAmount = 0n;
+    var isSolver = false;
 
     // --- Contract Addresses & ABIs ---
     const addresses = {
@@ -417,6 +415,32 @@
         const feeInUnits = ethers.parseUnits(feeAmount, 6);
 
         await handleSimpleTransaction(kernelContract, 'settleLoanFromBalance', [principalInUnits, feeInUnits], "Settle Loan");
+    }
+
+    async function setKernelOnInvestorVault() {
+        const newKernel = document.getElementById('newKernelAddress').value;
+        if (!ethers.isAddress(newKernel)) return showModal("Input Error", "Please enter a valid Kernel address.");
+        await handleSimpleTransaction(investorVaultContract, 'setKernel', [newKernel], "Set Kernel on Vault");
+    }
+
+    async function proposeNewInvestorVault() {
+        const newAddress = document.getElementById('proposeInvestorVault').value;
+        if (!ethers.isAddress(newAddress)) return showModal("Input Error", "Please enter a valid address.");
+        await handleSimpleTransaction(kernelContract, 'proposeNewInvestorVaultAddress', [newAddress], "Propose New Investor Vault");
+    }
+
+    async function finalizeInvestorVaultChange() {
+        await handleSimpleTransaction(kernelContract, 'finalizeInvestorVaultChange', [], "Finalize Investor Vault Change");
+    }
+
+    async function proposeNewYieldVault() {
+        const newAddress = document.getElementById('proposeYieldVault').value;
+        if (!ethers.isAddress(newAddress)) return showModal("Input Error", "Please enter a valid address.");
+        await handleSimpleTransaction(kernelContract, 'proposeNewYieldVaultAddress', [newAddress], "Propose New Yield Vault");
+    }
+
+    async function finalizeYieldVaultChange() {
+        await handleSimpleTransaction(kernelContract, 'finalizeYieldVaultChange', [], "Finalize Yield Vault Change");
     }
    
     async function sweepFees() {
