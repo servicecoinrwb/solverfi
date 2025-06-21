@@ -6,6 +6,7 @@
     <title>SolverFi - Real-World Yield, Real-World Impact</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.12.1/dist/ethers.umd.min.js"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -228,19 +229,19 @@
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div class="card p-6 rounded-lg">
-                    <p class="text-4xl font-extrabold gradient-text">12.3%</p>
+                    <p id="apyStat" class="text-4xl font-extrabold gradient-text">12.3%</p>
                     <p class="mt-1 text-gray-400">Current Investor APY</p>
                 </div>
                 <div class="card p-6 rounded-lg">
-                    <p class="text-4xl font-extrabold text-white">$1.2M</p>
+                    <p id="tvlStat" class="text-4xl font-extrabold text-white">...</p>
                     <p class="mt-1 text-gray-400">Total Value Locked (TVL)</p>
                 </div>
                 <div class="card p-6 rounded-lg">
-                    <p class="text-4xl font-extrabold text-white">$2.5M</p>
+                    <p id="loansStat" class="text-4xl font-extrabold text-white">...</p>
                     <p class="mt-1 text-gray-400">Total Loans Disbursed</p>
                 </div>
                 <div class="card p-6 rounded-lg">
-                    <p class="text-4xl font-extrabold text-white">42</p>
+                    <p id="businessesStat" class="text-4xl font-extrabold text-white">42</p>
                     <p class="mt-1 text-gray-400">Businesses Funded</p>
                 </div>
             </div>
@@ -380,5 +381,47 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ARBITRUM_RPC_URL = 'https://arb1.arbitrum.io/rpc';
+
+            const addresses = {
+                 investorVault: '0x1a51f1966d35661573908DC913307076d937aa90',
+                 kernel: '0x752e06b4903168ef5b5FA62773347617e2877C3F', 
+            };
+
+            const abis = {
+                investorVault: JSON.parse(`[{"inputs":[],"name":"getVaultTotals","outputs":[{"internalType":"uint256","name":"totalUSDC","type":"uint256"},{"internalType":"uint256","name":"totalSharesMinted","type":"uint256"},{"internalType":"uint256","name":"totalYield","type":"uint256"}],"stateMutability":"view","type":"function"}]`),
+                kernel: JSON.parse(`[{"inputs":[],"name":"totalCapitalDeployed","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]`)
+            };
+
+            const provider = new ethers.JsonRpcProvider(ARBITRUM_RPC_URL);
+
+            const investorVaultContract = new ethers.Contract(addresses.investorVault, abis.investorVault, provider);
+            const kernelContract = new ethers.Contract(addresses.kernel, abis.kernel, provider);
+
+            async function fetchLiveStats() {
+                try {
+                    const [vaultTotals, totalDisbursed] = await Promise.all([
+                        investorVaultContract.getVaultTotals(),
+                        kernelContract.totalCapitalDeployed()
+                    ]);
+
+                    const tvl = parseFloat(ethers.formatUnits(vaultTotals.totalUSDC, 6));
+                    const loans = parseFloat(ethers.formatUnits(totalDisbursed, 6));
+
+                    document.getElementById('tvlStat').textContent = `$${tvl.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                    document.getElementById('loansStat').textContent = `$${loans.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                
+                } catch(e) {
+                    console.error("Failed to fetch live stats:", e);
+                    document.getElementById('tvlStat').textContent = 'Error';
+                    document.getElementById('loansStat').textContent = 'Error';
+                }
+            }
+
+            fetchLiveStats();
+        });
+    </script>
 </body>
 </html>
