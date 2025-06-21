@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SolverFi - Real-World Yield, Real-World Impact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A192F; /* A darker navy blue for the base */
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #FFC43D, #FF6C2F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-button {
+            background-color: #FF6C2F;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #FFC43D;
+            transform: translateY(-2px);
+        }
+        .card {
+             background-color: #172A45; /* Slightly lighter navy for cards */
+             border: 1px solid #294C60;
+        }
+    </style>
+</head>
+
+<body class="text-gray-300">
+    <!-- Header -->
+    <header class="bg-opacity-80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white">SolverFi</h1>
+            <div>
+                <a href="#investors" class="mx-2 hover:text-orange-400 transition-colors">For Investors</a>
+                <a href="#businesses" class="mx-2 hover:text-orange-400 transition-colors">For Businesses</a>
+                <a href="#" class="ml-4 cta-button text-white font-bold py-2 px-4 rounded-lg shadow-lg">Launch App</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-6 text-center">
+        <div class="container mx-auto">
+            <h2 class="text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                Fueling Real-World Business. <br/> Generating <span class="gradient-text">Sustainable Yield.</span>
+            </h2>
+            <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+                SolverFi connects stablecoin investors seeking reliable returns with real-world businesses that need capital for invoice financing. Earn yield backed by tangible economic activity, not market speculation.
+            </p>
+            <div class="mt-8 flex justify-center gap-4">
+                <a href="#investors" class="cta-button text-white font-bold py-3 px-6 rounded-lg shadow-lg">Start Earning Yield</a>
+                <a href="#businesses" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-colors">Apply for Funding</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Investors Section -->
+    <section id="investors" class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-white">For Yield Investors</h3>
+                <p class="mt-2 text-gray-400">Put your USDC to work and earn yield from a diversified portfolio of real-world business loans.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card p-6 rounded-lg text-center">
+                    <div class="text-5xl mb-4">💰</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Deposit & Earn</h4>
+                    <p class="text-gray-400">Simply deposit your USDC into our secure Investor Vault. In return, you receive shares representing your stake in the capital pool.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="card p-6 rounded-lg text-center">
+                    <div class="text-5xl mb-4">📈</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Real-World Backing</h4>
+                    <p class="text-gray-400">Your capital is loaned to vetted, real-world businesses for specific, invoice-backed jobs. Your yield comes from their success.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="card p-6 rounded-lg text-center">
+                     <div class="text-5xl mb-4">✨</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Transparent & On-Chain</h4>
+                    <p class="text-gray-400">All capital movements, loans, and fee distributions are tracked transparently on the blockchain. Watch your investment grow in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Businesses Section -->
+    <section id="businesses" class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-white">For Businesses</h3>
+                <p class="mt-2 text-gray-400">Stop waiting on invoices. Get the capital you need to pay for labor and materials upfront, and grow your business faster.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card p-6 rounded-lg text-center">
+                    <div class="text-5xl mb-4">📝</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Simple Application</h4>
+                    <p class="text-gray-400">Fill out our straightforward eligibility form. Tell us about your business and the specific invoice you need to finance.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="card p-6 rounded-lg text-center">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">DAO-Approved</h4>
+                    <p class="text-gray-400">Our DAO performs due diligence to verify your business and the invoice. We partner with legitimate, credit-worthy businesses.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="card p-6 rounded-lg text-center">
+                    <div class="text-5xl mb-4">🚀</div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Get Funded & Grow</h4>
+                    <p class="text-gray-400">Once approved, you'll receive the USDC you need. Complete your job, get paid by your client, and repay the loan plus a competitive interest rate.</p>
+                </div>
+            </div>
+             <div class="text-center mt-12">
+                 <a href="#" class="cta-button text-white font-bold py-3 px-8 rounded-lg shadow-lg text-lg">Apply for Invoice Financing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Flowchart -->
+    <section class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-white">The Capital Lifecycle</h3>
+                <p class="mt-2 text-gray-400">A transparent, circular flow that benefits everyone.</p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0">
+                <!-- Step 1 -->
+                <div class="text-center p-4">
+                    <div class="w-24 h-24 rounded-full bg-orange-500 flex items-center justify-center text-4xl mx-auto">👨‍💼</div>
+                    <h5 class="font-bold mt-2 text-white">Investors</h5>
+                    <p class="text-xs text-gray-400">Deposit USDC</p>
+                </div>
+                <div class="text-2xl font-bold text-gray-500 mx-4">→</div>
+                <!-- Step 2 -->
+                <div class="text-center p-4">
+                    <div class="w-24 h-24 rounded-full bg-blue-500 flex items-center justify-center text-4xl mx-auto">🏦</div>
+                    <h5 class="font-bold mt-2 text-white">Kernel</h5>
+                    <p class="text-xs text-gray-400">Loans Capital</p>
+                </div>
+                <div class="text-2xl font-bold text-gray-500 mx-4">→</div>
+                <!-- Step 3 -->
+                <div class="text-center p-4">
+                    <div class="w-24 h-24 rounded-full bg-green-500 flex items-center justify-center text-4xl mx-auto">🏢</div>
+                    <h5 class="font-bold mt-2 text-white">Businesses</h5>
+                    <p class="text-xs text-gray-400">Repay Loan + Yield</p>
+                </div>
+                <div class="text-2xl font-bold text-gray-500 mx-4">→</div>
+                <!-- Step 4 -->
+                <div class="text-center p-4">
+                     <div class="w-24 h-24 rounded-full bg-purple-500 flex items-center justify-center text-4xl mx-auto">💸</div>
+                    <h5 class="font-bold mt-2 text-white">Yield Distributed</h5>
+                    <p class="text-xs text-gray-400">Back to Investors & DAO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <p>&copy; 2025 SolverFi. All Rights Reserved.</p>
+             <div class="mt-4">
+                <a href="#" class="mx-2 hover:text-orange-400">Twitter</a>
+                <a href="#" class="mx-2 hover:text-orange-400">Discord</a>
+                <a href="#" class="mx-2 hover:text-orange-400">Docs</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
